@@ -1,0 +1,5 @@
+﻿blank_issues_enabled: false
+contact_links:
+  - name: Project Notes
+    url: https://example.com
+    about: Internal docs are kept locally under /docs.

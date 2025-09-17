@@ -1,0 +1,10 @@
+﻿# type(scope): short summary
+# types: feat, fix, docs, chore, refactor, test, ci, build
+
+# Body (what & why). Wrap at 72 chars.
+# - Bullet points welcome
+# - Note trade-offs
+
+# Footer (breaking changes, issues)
+# BREAKING CHANGE: <explanation>
+# Closes #123

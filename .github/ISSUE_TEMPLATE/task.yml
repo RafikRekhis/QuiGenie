@@ -1,0 +1,24 @@
+﻿name: "Task"
+description: Implementation or infra task
+title: "chore: "
+labels: ["task"]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: e.g., Add Spotless plugin to backend
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan
+      description: How will you implement this?
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      placeholder: |
+        - Scripts/commands documented
+        - Verified locally
