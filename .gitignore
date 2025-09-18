@@ -2,11 +2,6 @@
 .DS_Store
 Thumbs.db
 
-# Node
-node_modules/
-dist/
-.angular/
-
 # Java / Maven
 target/
 *.class
