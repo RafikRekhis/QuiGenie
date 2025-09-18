@@ -64,10 +64,9 @@ Every change must go through a Pull Request:
 
 ---
 
-## Summary
+## Database Migrations (Flyway)
 
-- Trunk-based workflow with `main` protected.  
-- Short-lived feature/fix/chore branches.  
-- PR required for every change.  
-- Commits follow Conventional Commits.  
-- Local docs stay in `/docs`, never pushed.
+- All schema changes MUST be done via Flyway migrations in `backend/src/main/resources/db/migration`.
+- Naming: `V<version>__<description>.sql` (e.g., `V3__add_quizzes_table.sql`).
+- Do not modify applied migrations; fix forward with a new version.
+- `spring.jpa.hibernate.ddl-auto=none` — schema is owned by Flyway.
