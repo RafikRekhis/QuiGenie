@@ -1,7 +1,6 @@
 package com.quigenie.config;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,15 +25,18 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .cors(Customizer.withDefaults())
+        http.cors(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/actuator/health", "/actuator/info").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
-                        .anyRequest().permitAll());
-                        
+                .authorizeHttpRequests(
+                        auth ->
+                                auth.requestMatchers("/actuator/health", "/actuator/info")
+                                        .permitAll()
+                                        .requestMatchers(HttpMethod.POST, "/auth/**")
+                                        .permitAll()
+                                        .anyRequest()
+                                        .permitAll());
+
         return http.build();
     }
 
